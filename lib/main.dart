@@ -4,6 +4,8 @@ void main() {
   runApp(const MyApp());
 }
 
+ git remote add origin https://github.com/Alaa17/Azkar.git 
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
