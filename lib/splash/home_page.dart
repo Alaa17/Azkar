@@ -5,56 +5,24 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("الرئيسية")),
-      
-      // ✅ هنا نضيف الدروار
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            DrawerHeader(
-              decoration: BoxDecoration(color: Colors.green),
-              child: Text(
-                'أذكار المسلم',
-                style: TextStyle(color: Colors.white, fontSize: 24),
+      backgroundColor: Colors.deepPurple.shade300,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          padding: EdgeInsets.all(16),
+          child: Column(
+            children: [
+              TasbeehScreen(), // الكارت الأول
+              SizedBox(height: 20),
+              Card(
+                elevation: 4,
+                child: ListTile(
+                  leading: Icon(Icons.favorite, color: Colors.red),
+                  title: Text("ميزة ثانية"),
+                ),
               ),
-            ),
-            ListTile(
-              leading: Icon(Icons.home),
-              title: Text('الرئيسية'),
-              onTap: () {
-                Navigator.pop(context); // يرجّع الدروار
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.book),
-              title: Text('ختمة القرآن'),
-              onTap: () {
-                // افتح صفحة ختمة
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.settings),
-              title: Text('الإعدادات'),
-              onTap: () {
-                // افتح صفحة الإعدادات
-              },
-            ),
-          ],
-        ),
-      ),
-
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            TasbeehScreen(), // ✅ أول كارت
-            SizedBox(height: 20),
-            Card(
-              child: ListTile(
-                title: Text("ميزة ثانية"),
-              ),
-            ),
-          ],
+              // تقدر تضيف كروت تانية هنا
+            ],
+          ),
         ),
       ),
     );

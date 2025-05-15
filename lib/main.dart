@@ -1,21 +1,21 @@
+
 import 'package:flutter/material.dart';
 import 'package:my_azkar/splash/hidden_drawer.dart';
-import 'package:my_azkar/splash/home_page.dart';
-
 
 void main() {
-  runApp(const MyAZKAR());
+  runApp(MyAzkarApp());
 }
 
-class MyAZKAR extends StatelessWidget {
-  const MyAZKAR({super.key});
-
+class MyAzkarApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:  HomePage(),
-     theme: ThemeData(primarySwatch: Colors.deepPurple),
+      home: HiddenDrawer(),
+      title: 'تطبيقي',
+           theme: ThemeData(primarySwatch: Colors.deepPurple),
+
+       // هنا نبدأ من الهيدن دراور
     );
   }
 }
